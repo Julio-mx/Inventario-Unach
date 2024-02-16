@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo.Vistas.LoginPage"
+             xmlns:ViewModel="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core">
+
+
+    <ContentPage.BindingContext>
+        <ViewModel:Login_ViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Usuario" HorizontalOptions="CenterAndExpand"/>
+            <Entry Text="{Binding User.Usuario}" HorizontalOptions="CenterAndExpand"/>
+            
+            <Label Text="Contraseña" HorizontalOptions="CenterAndExpand"/>
+            <Entry Text="{Binding User.Password}" HorizontalOptions="CenterAndExpand"/>
+            
+            <Button Text="Iniciar Sesión" Command="{Binding LoginCommand}"/>
+            
+            <Button Text="Saludar" Command="{Binding SaludarCommand}"/>
+            <Label Text="{Binding Mensaje}"
+           TextColor="Blue"
+           FontSize="20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
